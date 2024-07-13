@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+set timeout 2
+
+spawn ./interactivescript.sh
+
+expect "Hello, who is this?\r"
+sleep 1
+send -- "Adam\r"
+#puts  "ok its working\r"
+expect eof "hi *"
+expect "What's your favorite color?\r"
+
+send -- "green\r"
+
+expect "How many cats do you have?\r"
+
+send -- "none\r"
+expect eof
+#interact
+puts "Pr0gram Ened\r"

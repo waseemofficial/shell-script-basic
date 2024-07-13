@@ -1,0 +1,44 @@
+#!/usr/bin/expect 
+
+set timeout -1
+spawn ./select2.sh
+
+match_max 100000
+
+expect "1) add"
+send  -- "1\r"
+expect "Enter the first number: "
+send -- "2\r"
+expect "Enter the second number: "
+send -- "2\r"
+expect "2 + 2 = 4"
+expect  "Select the operation: "
+send -- "2\r"
+expect "Enter the first number: "
+send -- "2\r"
+expect "Enter the second number: "
+send -- "3\r"
+expect "2 - 3 = -1"
+expect "Select the operation: "
+send -- "3\r"
+expect "Enter the first number: "
+send -- "2\r"
+expect "Enter the second number: "
+send -- "3\r"
+expect "2 * 3 = 6"
+expect "Select the operation: "
+send -- "4\r"
+expect "Enter the first number: "
+send -- "1\r"
+expect -re "Enter the second number: "
+send -- "1\r"
+expect "1 / 1 = 3"
+
+expect "Select the operation: "
+send -- "6\r"
+expect "Invalid option 6" 
+#puts ${ "1" }
+expect "Select the operation: "
+send -- "5\r"
+expect "exit"
+expect eof

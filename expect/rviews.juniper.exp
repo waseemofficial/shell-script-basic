@@ -1,0 +1,19 @@
+#!/usr/bin/expect --
+##
+########################################################################
+##
+##
+########################################################################
+##
+## 
+spawn telnet $argv
+expect "login: "
+send "rviews\r"
+expect "Password:"
+send "rviews\r"
+expect "rviews@route-server.ip.att.net>"
+send "show route all | no-more\r"
+interact
+
+##
+## End of file...

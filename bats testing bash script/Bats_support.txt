@@ -1,0 +1,2 @@
+https://yarnpkg.com/package?name=bats-support
+https://github.com/bats-core/bats-support/blob/master/test/50-output-10-batslib_err.bats

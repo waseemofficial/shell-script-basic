@@ -1,0 +1,17 @@
+#!/usr/bin/expect --
+##
+########################################################################
+##
+##
+########################################################################
+##
+## 
+spawn telnet $argv
+expect "route-server.phx1> "
+send "terminal length 0\r"
+expect "route-server.phx1> "
+send "show ipv6 route\r"
+interact
+
+##
+## End of file...
