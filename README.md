@@ -115,6 +115,78 @@ shell-script-basic/
   ./api-integration/github-issue.sh "Issue Title" "Issue Description"
   ```
 
+## 🧑‍💻 Example Scripts
+
+### 1. **Backup Script**
+Automate file backups with compression.
+
+```bash
+#!/bin/bash
+# backup.sh - Automates file backups
+SOURCE=$1
+DESTINATION=$2
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+tar -czf "${DESTINATION}/backup_${TIMESTAMP}.tar.gz" "$SOURCE"
+echo "Backup completed: ${DESTINATION}/backup_${TIMESTAMP}.tar.gz"
+```
+
+**Usage**:
+```bash
+./backups/backup.sh /path/to/source /path/to/destination
+```
+
+---
+
+### 2. **System Monitoring**
+Monitor CPU and memory usage.
+
+```bash
+#!/bin/bash
+# system-monitor.sh - Monitors system resources
+echo "CPU Usage: $(top -bn1 | grep load | awk '{printf "%.2f%%\n", $(NF-2)}')"
+echo "Memory Usage: $(free -m | awk '/Mem:/ {printf "%.2f%%\n", $3/$2*100}')"
+```
+
+**Usage**:
+```bash
+./monitoring/system-monitor.sh
+```
+
+---
+
+### 3. **API Integration**
+Create GitHub issues from the command line.
+
+```bash
+#!/bin/bash
+# github-issue.sh - Creates a GitHub issue
+TITLE=$1
+DESCRIPTION=$2
+TOKEN="your_github_token"
+REPO="your_username/your_repo"
+
+curl -X POST -H "Authorization: token $TOKEN" \
+     -d '{"title": "'"$TITLE"'", "body": "'"$DESCRIPTION"'"}' \
+     "https://api.github.com/repos/$REPO/issues"
+```
+
+**Usage**:
+```bash
+./api-integration/github-issue.sh "Issue Title" "Issue Description"
+```
+
+---
+
+## 📸 Screenshots
+
+### Backup Script in Action
+![Backup Script](https://via.placeholder.com/600x300.png?text=Backup+Script+Output)
+
+### System Monitoring Output
+![System Monitoring](https://via.placeholder.com/600x300.png?text=System+Monitoring+Output)
+
+---
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
@@ -131,3 +203,18 @@ For questions or feedback, feel free to reach out:
 ---
 
 
+==============================
+## 🛠️ Technologies and Tools Used
+This repository showcases a variety of technologies and tools to enhance your shell scripting skills:
+
+| **Category**         | **Tools/Technologies**                                                                 |
+|-----------------------|---------------------------------------------------------------------------------------|
+| **Scripting Language**| Bash (Bourne Again Shell)                                                             |
+| **Core Utilities**    | `grep`, `awk`, `sed`, `find`, `tar`, `rsync`                                         |
+| **Automation**        | `cron` for task scheduling                                                            |
+| **Testing**           | `BATS` (Bash Automated Testing System)                                               |
+| **System Monitoring** | `top`, `free`, `df`, `htop`                                                          |
+| **API Integration**   | `curl` for interacting with REST APIs (e.g., GitHub, Jira)                           |
+| **Version Control**   | Git and GitHub for collaboration                                                     |
+
+---
