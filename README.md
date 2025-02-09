@@ -126,7 +126,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 For questions or feedback, feel free to reach out:
 - **GitHub**: [waseemofficial](https://github.com/waseemofficial)
-- **Email**: 
+- **[Email Me via Gmail](https://mail.google.com/mail/?view=cm&fs=1&to=waseemofficial@example.com&su=Hello%20Waseem&body=Hi%20Waseem,%20I%20found%20your%20GitHub%20profile!)**: 
 
 ---
 
