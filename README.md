@@ -174,17 +174,6 @@ curl -X POST -H "Authorization: token $TOKEN" \
 ```bash
 ./api-integration/github-issue.sh "Issue Title" "Issue Description"
 ```
-
----
-
-## 📸 Screenshots
-
-### Backup Script in Action
-![Backup Script](https://via.placeholder.com/600x300.png?text=Backup+Script+Output)
-
-### System Monitoring Output
-![System Monitoring](https://via.placeholder.com/600x300.png?text=System+Monitoring+Output)
-
 ---
 
 ## License
@@ -203,9 +192,7 @@ For questions or feedback, feel free to reach out:
 ---
 
 
-==============================
-## 🛠️ Technologies and Tools Used
-This repository showcases a variety of technologies and tools to enhance your shell scripting skills:
+===
 
 | **Category**         | **Tools/Technologies**                                                                 |
 |-----------------------|---------------------------------------------------------------------------------------|
